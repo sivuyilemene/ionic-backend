@@ -1,0 +1,6 @@
+{
+    "httpMethod": "GET",
+    "pathParameters": {
+        "emailAddress": "ksj@email.com"
+    }
+}
