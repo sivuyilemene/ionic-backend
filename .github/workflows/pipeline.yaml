@@ -11,19 +11,19 @@ on:
 
 env:
   SAM_TEMPLATE: template.yaml
-  TESTING_STACK_NAME: ionic-backend-dev
-  TESTING_PIPELINE_EXECUTION_ROLE: arn:aws:iam::058264257405:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-S7VX32TBVlH2
-  TESTING_CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::058264257405:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-EK4iNlRVEeoY
-  TESTING_ARTIFACTS_BUCKET: aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-rfhwr6byjsmm
+  TESTING_STACK_NAME: ioninc-backend-dev
+  TESTING_PIPELINE_EXECUTION_ROLE: arn:aws:iam::635458995124:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-xcaV3tQDEK0U
+  TESTING_CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::635458995124:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-hMys4nQ8OwF7
+  TESTING_ARTIFACTS_BUCKET: aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-rwmamcra4wrs
   # If there are functions with "Image" PackageType in your template,
   # uncomment the line below and add "--image-repository ${TESTING_IMAGE_REPOSITORY}" to
   # testing "sam package" and "sam deploy" commands.
   # TESTING_IMAGE_REPOSITORY = '0123456789.dkr.ecr.region.amazonaws.com/repository-name'
   TESTING_REGION: us-east-1
   PROD_STACK_NAME: ionic-backend-prod
-  PROD_PIPELINE_EXECUTION_ROLE: arn:aws:iam::058264257405:role/aws-sam-cli-managed-prod-pipe-PipelineExecutionRole-ydfTA3p6uXFW
-  PROD_CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::058264257405:role/aws-sam-cli-managed-prod--CloudFormationExecutionRo-9yxY4UCZORt8
-  PROD_ARTIFACTS_BUCKET: aws-sam-cli-managed-prod-pipeline--artifactsbucket-fn2merezbqsm
+  PROD_PIPELINE_EXECUTION_ROLE: arn:aws:iam::635458995124:role/aws-sam-cli-managed-prod-pipe-PipelineExecutionRole-ALsYqhkgKYTf
+  PROD_CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::635458995124:role/aws-sam-cli-managed-prod--CloudFormationExecutionRo-OOTylydxmllc
+  PROD_ARTIFACTS_BUCKET: aws-sam-cli-managed-prod-pipeline--artifactsbucket-fzpf8i444ssu
   # If there are functions with "Image" PackageType in your template,
   # uncomment the line below and add "--image-repository ${PROD_IMAGE_REPOSITORY}" to
   # prod "sam package" and "sam deploy" commands.
