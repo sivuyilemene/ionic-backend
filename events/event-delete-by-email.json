@@ -1,0 +1,6 @@
+{
+    "httpMethod": "DELETE",
+    "pathParameters": {
+        "emailAddress": "ksj@email.com"
+    }
+}
