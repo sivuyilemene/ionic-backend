@@ -32,8 +32,15 @@ export const getByIdHandler = async (event) => {
   try {
     const data = await ddbDocClient.send(new GetCommand(params));
     var item = data.Item;
+    console.log("Succesfully retrieved item by id")
   } catch (err) {
-    console.log("Error", err);
+    
+    console.error("Unable to retrieve item", err);
+    return {
+      statusCode: data.$metadata.httpStatusCode,
+      message: "Unable to find item" 
+
+    }
   }
  
   const response = {
@@ -42,6 +49,6 @@ export const getByIdHandler = async (event) => {
   };
  
   // All log statements are written to CloudWatch
-  console.info(`response from: ${event.path} statusCode: ${response.statusCode} body: ${response.body}`);
+  // console.info(`response from: ${event.path} statusCode: ${response.statusCode} body: ${response.body}`);
   return response;
 }
