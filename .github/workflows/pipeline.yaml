@@ -11,7 +11,7 @@ on:
 
 env:
   SAM_TEMPLATE: template.yaml
-  TESTING_STACK_NAME: ioninc-backend-dev
+  TESTING_STACK_NAME: ionic-backend-dev
   TESTING_PIPELINE_EXECUTION_ROLE: arn:aws:iam::635458995124:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-xcaV3tQDEK0U
   TESTING_CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::635458995124:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-hMys4nQ8OwF7
   TESTING_ARTIFACTS_BUCKET: aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-rwmamcra4wrs
