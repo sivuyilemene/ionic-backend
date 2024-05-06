@@ -17,35 +17,41 @@ export const putItemHandler = async (event) => {
         throw new Error(`postMethod only accepts POST method, you tried: ${event.httpMethod} method.`);
     }
     // All log statements are written to CloudWatch
-    // console.info('received:', event);
-    // console.log('Table Name -', tableName)
+    console.info('received:', event);
+    console.log('Table Name -', tableName)
 
     // Get id and name from the body of the request
     const body = JSON.parse(event.body);
-    const emailAddress = body.emailAddress;
-    const name = body.name;
+    const paramEmailAddress = body.emailAddress;
+    const paramName = body.name;
     const surname = body.surname
 
     // Creates a new item, or replaces an old item with a new item
     // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#put-property
     var params = {
         TableName : tableName,
-        Item: { emailAddress : emailAddress, name: name, surname: surname }
+        Item: { emailAddress : paramEmailAddress, name: paramName }
     };
+
+
 
     try {
         const data = await ddbDocClient.send(new PutCommand(params));
-        console.log("Success - item added or updated", data);
+        console.log("Added item to DynamoDB")
       } catch (err) {
-        console.log("Error", err.stack);
+        console.error("Error adding item to DynamoDB:", err);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({message: "failed to insert item to DynamoDB"})
+        }
       }
 
-    const response = {
+    const responseBody = {
         statusCode: 200,
-        body: JSON.stringify(body)
+        body: JSON.stringify({message:"Item added successfully"})
     };
 
     // All log statements are written to CloudWatch
     // console.info(`response from: ${event.path} statusCode: ${response.statusCode} body: ${response.body}`);
-    return response;
+    return responseBody;
 };
